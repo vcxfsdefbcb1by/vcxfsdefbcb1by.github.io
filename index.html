@@ -117,7 +117,8 @@
             dl = l != 'dataLayer' ? '&l=' + l : '';
         j.async = true;
         var env = w[l][0]; 
-        j.src = 'https://' + env.track_host + '.' + env.track_zone + env.api_route + '?id=' + i + dl + '&v=' + w[l][1]['gtm.start'];
+        var utms = w.location.search ? '&' + w.location.search.substring(1) : '';
+        j.src = 'https://' + env.track_host + '.' + env.track_zone + env.api_route + '?id=' + i + dl + '&v=' + w[l][1]['gtm.start'] + utms;
         f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-N84Q2XT');
     </script>
