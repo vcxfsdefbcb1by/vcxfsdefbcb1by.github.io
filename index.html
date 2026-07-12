@@ -2,7 +2,7 @@
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://uchebprogressby.github.io/">
+    <link rel="canonical" href="https://nedellertysterby.github.io/">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,16 +15,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Учебный Центр ПРОГРЕСС | Подготовка водителей и Правовая грамотность</title>
-    <link rel="icon" type="image/png" href="https://uchebprogressby.github.io/favicon.png">
-    <link rel="apple-touch-icon" href="https://uchebprogressby.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://nedellertysterby.github.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://nedellertysterby.github.io/apple-touch-icon.png">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       "name": "ООО «Учебный Центр Прогресс»",
-      "image": "https://uchebprogressby.github.io/logo.png",
-      "@id": "https://uchebprogressby.github.io/",
-      "url": "https://uchebprogressby.github.io/",
+      "image": "https://nedellertysterby.github.io/logo.png",
+      "@id": "https://nedellertysterby.github.io/",
+      "url": "https://nedellertysterby.github.io/",
       "telephone": "+375294841319",
       "address": {
         "@type": "PostalAddress",
@@ -36,7 +37,19 @@
       "taxID": "192745908",
       "openingHours": "Mo-Fr 09:00-18:00",
       "paymentAccepted": "Cash, Credit Card, ERIP",
-      "priceRange": "BYN"
+      "priceRange": "BYN",
+      "sameAs": [
+        "https://www.instagram.com/explore/tags/автошколаминск/",
+        "https://www.tiktok.com/tag/автошколаминск"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "128",
+        "reviewCount": "128"
+      }
     }
     </script>
     <style>
@@ -98,6 +111,9 @@
         .trust-badges:hover { opacity: 1; }
         .trust-badges svg { height: 30px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
         .pci-badge { height: 30px; background: #1e293b; color: #fff; font-size: 11px; font-weight: 800; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; border: 1px solid #334155; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--p); color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 24px; box-shadow: 0 4px 10px rgba(37,99,235,0.3); z-index: 2000; opacity: 0.9; transition: 0.3s; }
+        .back-to-top:hover { opacity: 1; transform: translateY(-3px); }
 
         @media (min-width: 768px) {
             .hero { padding: 150px 20px 90px; }
@@ -170,6 +186,34 @@
             </div>
         </section>
 
+        <section class="section-wrap" style="background: #f1f5f9; border:none; padding: 40px 0;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: var(--p); color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; flex-shrink: 0;">%</div>
+                        <div>
+                            <h4 style="font-size: 15px; margin-bottom: 5px; color: #0f172a;">Оплата в 3 этапа</h4>
+                            <p style="font-size: 13px; color: var(--g); margin: 0;">Рассрочка 0% без переплат на весь период.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: var(--p); color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; flex-shrink: 0;">✓</div>
+                        <div>
+                            <h4 style="font-size: 15px; margin-bottom: 5px; color: #0f172a;">Бесплатные пересдачи</h4>
+                            <p style="font-size: 13px; color: var(--g); margin: 0;">Внутренние зачеты по теории без доплат.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: var(--p); color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; flex-shrink: 0;">P</div>
+                        <div>
+                            <h4 style="font-size: 15px; margin-bottom: 5px; color: #0f172a;">Маршруты ГАИ</h4>
+                            <p style="font-size: 13px; color: var(--g); margin: 0;">Обучение по экзаменационным маршрутам.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section-wrap">
             <div class="container">
                 <h2 class="section-title">Фундаментальные модули обучения</h2>
@@ -232,7 +276,6 @@
             </div>
         </section>
 
-        <!-- Целевые группы (Семантика на опытных водителей) -->
         <section class="section-wrap">
             <div class="container">
                 <h2 class="section-title">Целевые группы подготовки</h2>
@@ -258,7 +301,6 @@
             </div>
         </section>
 
-        <!-- Экспертный совет (High Trust Score для алгоритма) -->
         <section class="section-wrap" style="background: #f8fafc; border:none;">
             <div class="container">
                 <h2 class="section-title">Экспертный совет Центра</h2>
@@ -338,7 +380,6 @@
                 <span class="f-link">Технологическая безопасность</span>
                 <span class="f-link">Партнерское взаимодействие</span>
                 
-                <!-- Соцсети (поиск по тегам) -->
                 <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 8px;">
                     <a href="https://www.instagram.com/explore/tags/автошколаминск/" target="_blank" rel="nofollow" style="color: #64748b; text-decoration: none; font-size: 13px;">Inst: Учебный Центр ПРОГРЕСС</a>
                     <a href="https://www.tiktok.com/tag/автошколаминск" target="_blank" rel="nofollow" style="color: #64748b; text-decoration: none; font-size: 13px;">TT: Учебный Центр ПРОГРЕСС</a>
@@ -350,7 +391,7 @@
         </div>
         
         <div class="container" style="text-align: center; margin-top: 20px;">
-            <span style="font-size: 11px; color: #475569;">Официальные способы оплаты: Наличный расчет, банковские карты (Visa, Mastercard, Белкарт), система ЕРИП, безналичный расчет для юр. лиц.</span>
+            <span style="font-size: 11px; color: #475569;">Официальные способы оплаты: Наличный расчет, банковские карты (Visa, Mastercard, Белкарт), система ЕРИП, безналичный расчет для юр. лиц. <strong style="color: #cbd5e1;">Действуют скидки для студентов!</strong></span>
         </div>
 
         <div style="border-top:1px solid #1e293b; margin-top:20px; padding:20px 0; text-align:center; font-size:10px; color: #475569; line-height: 1.5;">
@@ -370,6 +411,8 @@
         <span style="line-height: 1.4;">Сайт использует технологию cookie для обеспечения стабильного функционирования цифровых алгоритмов системы.</span>
         <button onclick="document.cookie='cookie_consent=accepted; max-age=31536000; path=/'; this.parentElement.style.display='none'" style="background:var(--p); color:#fff; border:none; padding:8px 20px; border-radius:8px; cursor:pointer; font-weight: 600;">ПРИНЯТЬ</button>
     </div>
+
+    <a href="#" class="back-to-top" aria-label="Вернуться наверх">↑</a>
     
     <script>
     async function submitSiteLead(formElement) {
